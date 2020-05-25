@@ -7,7 +7,7 @@ from keras import backend as K
 import os
 
 def model_train(epoch,n):
-    batch_size = 32
+    batch_size = 16
     num_classes = 10
     epochs = epoch
 
@@ -49,7 +49,7 @@ def model_train(epoch,n):
                      activation='relu'))
         model.add(MaxPooling2D(pool_size=(2, 2)))
     model.add(Flatten())
-    model.add(Dense(128, activation='relu'))
+    model.add(Dense(64, activation='relu'))
     model.add(Dense(num_classes, activation='softmax'))
 
     model.compile(loss=keras.losses.categorical_crossentropy,
